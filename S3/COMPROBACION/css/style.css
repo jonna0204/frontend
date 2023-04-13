@@ -1,0 +1,70 @@
+#tabla{
+    border-collapse:initial;
+    border-color: black;
+}
+
+.rojo{
+    background-color: red;
+    font-size: 1em;
+}
+
+.verde{
+    background-color: green;
+    font-size: 1em;
+}
+
+.blanco{
+    background-color: white;
+    font-size: 1em;
+}
+
+.gris{
+    background-color: grey;
+    font-size: 1em;
+}
+
+.cafe{
+    background-color: brown;
+    font-size: 1em;
+}
+
+.azul{
+    background-color: blue;
+    font-size: 1em;
+}
+
+.violeta{
+    background-color: violet;
+    font-size: 1em;
+}
+
+.rosado{
+    background-color: pink;
+    font-size: 1em;
+}
+
+.amarillo{
+    background-color: yellow;
+    font-size: 1em;
+}
+
+.turquesa{
+    background-color: turquoise;
+    font-size: 1em;
+}
+
+.naranjo{
+    background-color: orange;
+    font-size: 1em;
+}
+
+.purpura{
+    background-color: purple;
+    font-size: 1em;
+}
+
+.negro{
+    background-color: black;
+    color: white;
+    font-size: 1em;
+}
