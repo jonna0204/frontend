@@ -1,5 +1,6 @@
 //consumiendo datos con fetch api
 //declaracion para que se ejecute el javascript luego de que este cargado el documento
+document.addEventListener('DOMContentLoaded', function() { });
 $(document).ready(function(){
 
     //agregar accion o evento click
@@ -15,18 +16,41 @@ $(document).ready(function(){
         }
         
         //Fetch api o peticion para obtener las frases
-        fetch(`https://studio-ghibli-films-api.herokuapp.com/api/${busqueda}`)
-            .then(response => response.json())//se obtiene el json de la respuesta
-            .then(data => {
-                console.log(data)
-                // filtrado
-                // recorrido
+        fetch(`https://studio-ghibli-films-api.herokuapp.com/api/`)
+                    .then(response => response.json())
+                    .then(data => {
+                             // check si data es un objeto o un array
+                            if (typeof data === 'object' && !Array.isArray(data)) {
+                                //convierte data en un array
+                                var dataArray = Object.values(data);
+                                // se filtra las peliculas que coincidan con la busqueda
+                                var filteredData = dataArray.filter(film => film.title.toLowerCase().includes(busqueda.toLowerCase()));
+                                console.log(filteredData)
+                                filteredData.forEach(film => {
+                                    tarjeta(film)
+                                });
 
-                //llamada a la funcion
-             }).catch(error => console.log(error))
+                                // tarjeta(filteredData)
+                            }
+                    });
 
              //funcion para inyectar datos en la tarjeta
+             function tarjeta(params) {
+                document.getElementById("tarjeta").innerHTML = ""
+                document.getElementById("tarjeta").innerHTML +=
+                `
+                <div class="card col-sm-12 col-md-6 mx-auto" style="width: 18rem;">
+                    <img src="${params.poster}" class="card-img-top mt-2" alt="...">
+                    <div class="card-body">
+                    <p style="text-align:center; font-size:35px; color:red;" class="card-text">${params.title}</p>
+                    <p style="text-align:center; color:purple; font-weight:bold" class="card-text">${params.synopsis}</p>
+                    <p style="text-align:center; color:purple; font-weight:bold" class="card-text">Titulo romanizado: ${params.hepburn}</p>
+                    <p style="text-align:center; color:purple; font-weight:bold" class="card-text">Fecha de estreno: ${params.release}</p>
+                    <p style="text-align:center; color:purple; font-weight:bold" class="card-text">Director: ${params.director}</p>
+                    </div>
+                </div>
+                `
+             }
     });
 
 })
-
