@@ -1,0 +1,68 @@
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&family=Source+Sans+Pro:wght@900&display=swap");
+/* https://fonts.google.com/ */
+* {
+  margin: 0;
+  text-decoration: none;
+}
+
+.icon {
+    color: black;
+    padding: 15px;
+    border-radius: 50%;
+  }
+  
+  .icon:hover {
+    cursor: pointer;
+    background-color: rgb(192, 84, 208);
+  }
+
+  body{
+    display: grid;
+    place-items: center;
+    text-align: center;
+  }
+
+
+
+nav{
+    width: 100%;
+    height: 100%;
+}
+
+.card{
+    border-right: 1em;
+}
+
+h1,h4{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+}
+
+.titulo{
+    background-image: url(./tapiz.jpeg);
+    width: 100%;
+    height: 10em;
+}
+
+.barra{
+    height: 6em;
+    width: 100%;
+}
+
+#carouselExampleIndicators img{
+    height: 500px;
+    object-fit: cover;
+    border: 10px;
+}
+
+.container-fluid.mb-5.p-8.sticky-bottom {
+    padding-left: 30%;
+    padding-right: 30%;
+  }
+  
+  @media (max-width: 499px) {
+    .container-fluid.mb-5.p-8.sticky-bottom {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }

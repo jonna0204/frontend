@@ -1,0 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&family=Source+Sans+Pro:wght@900&display=swap");
+/* https://fonts.google.com/ */
+* {
+  margin: 0;
+  text-decoration: none;
+}
+
+.icon {
+    color: black;
+    padding: 30px;
+    border-radius: 50%;
+  }
+  
+
+  .icon:hover {
+    cursor: pointer;
+    background-color: rgb(192, 84, 208);
+  }
+
+#mit{
+    display: grid;
+    place-items: center;
+    text-align: center;
+}
+
+.card{
+    margin: 5mm;
+    height: 10px;
+}
